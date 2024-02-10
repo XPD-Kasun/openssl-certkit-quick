@@ -16,4 +16,11 @@ Assumes openssl has already installed. Shell files (.sh files) runs on linux or 
 
 A sample NodeJs webapp created for testing the file. That's in testapp folder. Refer src/index.js. The config is set to myorg folder crt and key file. Change it to your files and run the app. This app will run https on 3001 port. If browser says cannot verify, try add the ca.crt to trusted root certification list. Retry and clear cache if needed and you'll have https.
 
+To run this webapp, install pnpm (or change below to npm or yarn) and NodeJs.
+
+```bash
+pnpm install
+pnpm start
+```
+
 I will describe more in upcoming days.
