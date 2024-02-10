@@ -12,6 +12,7 @@ Assumes openssl has already installed. Shell files (.sh files) runs on linux or 
 5. Goto "ca" folder and run create-ca.sh. This will create ca.crt and private key file in private folder.
 6. Run "sign.sh ../orgs/yourfolder/mydomain.csr" and new certificate will be created in newcerts folder with serialnumber.pem filename.
 7. Copy the .pem file and rename to .crt file to view or use as is for web server. (If you need privatekey for this file, take from yourfolder/privatekey.txt).
+8. You can create as many certs by looping 2 to 4 and 6 (5 is needed only once).
 
 A sample NodeJs webapp created for testing the file. That's in testapp folder. Refer src/index.js. The config is set to myorg folder crt and key file. Change it to your files and run the app. This app will run https on 3001 port. If browser says cannot verify, try add the ca.crt to trusted root certification list. Retry and clear cache if needed and you'll have https.
 
