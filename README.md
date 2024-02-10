@@ -6,7 +6,7 @@ This kit can be used to quickly setup certificate authority (CA) and start issui
 Assumes openssl has already installed. Shell files (.sh files) runs on linux or mac. If using Windows, refer the commands in "openssl command line.txt" file and manually issue them in powershell or cmd.
 
 1. Download the kit.
-2. Duplicate myorg folder and rename to needed domain.
+2. Duplicate myorg folder and rename to needed domain (Lets say yourfolder).
 3. Update csr-request.conf in that folder with domain info.
 4. Run create-csr.sh shell file.
 5. Goto "ca" folder and run create-ca.sh. This will create ca.crt and private key file in private folder.
