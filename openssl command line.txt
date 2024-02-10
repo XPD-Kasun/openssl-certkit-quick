@@ -1,0 +1,33 @@
+ca
+=============
+ca has provided with a ca.conf with good defaults.
+
+1. First get rsa key for ca,
+
+openssl genrsa -out private/ca-privatekey.txt 2048
+
+2. Generate ca.crt (ca root certificate)
+
+openssl req -x509 -new -key private/ca-privatekey.txt -out ca.crt -days 7300
+
+3. Now we have ca.crt and can start signing csr. Let's assume csr in ../orgs/myorg/mydomain.csr
+
+openssl ca -config ca.conf -in ../orgs/myorg/mydomain.csr
+
+This will create a `serial`.pem in newcerts folder. Rename it to mydomain.crt and copy to your organization folder(orgs/myorg) to use.
+
+domains
+=============
+
+1. First create rsa for domain,
+
+openssl genrsa -out privatekey.txt 2048
+
+2. Domains can create a csr and ask ca to sign. in orgs/myorg/csr-request.conf is such example
+csr request config file. Fill it and use it. We need to generate a csr using this file by,
+
+openssl req -new -config csr-request.conf -out mydomain.csr
+
+Now run ca 3rd step.
+
+
