@@ -7,7 +7,7 @@ Assumes openssl has already installed. Shell files (.sh files) runs on linux or 
 
 1. Download the kit.
 2. Duplicate myorg folder and rename to needed domain.
-3. Update csr-request.conf with domain info.
+3. Update csr-request.conf in that folder with domain info.
 4. Run create-csr.sh shell file.
 5. Goto "ca" folder and run create-ca.sh. This will create ca.crt and private key file in private folder.
 6. Run "sign.sh ../orgs/yourfolder/mydomain.csr" and new certificate will be created in newcerts folder with serialnumber.pem filename.
